@@ -69,15 +69,15 @@ def flatten(bd):
     flat.extend(l)
   return flat
 
-def solve(bd):
-  work = set(filter(lambda t: t.known(), flatten(bd)))
+def solve(bd, updated=None):
+  if updated is None:
+    updated = set(filter(lambda t: t.known(), flatten(bd)))
   def tile_apply(tile, val):
-    if tile.setNot(val) and tile not in work:
-      work.add(tile)
+    if tile.setNot(val) and tile not in updated:
+      updated.add(tile)
   board_flat = flatten(bd)
-
-  while len(work) > 0:
-    t = work.pop()
+  while len(updated) > 0:
+    t = updated.pop()
     x, y = t.position()
     if t.known(): # Apply constraints to sourondings
       # same row
@@ -104,7 +104,7 @@ def solve(bd):
     try:
       gx, gy = tile_guess.position()
       tmp[gx][gy].setValue(guess)
-      return solve(tmp)
+      return solve(tmp, updated={tmp[gx][gy]})
     except SudokuError as e:
       pass # Earlier incorrect tile assignment, recover
   raise SudokuError('Unsolvable board')
