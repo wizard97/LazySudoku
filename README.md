@@ -9,10 +9,13 @@ completing the 'easy' puzzle, I decided it would be more worthwhile to write
 a python script that would solve the remaining puzzles. It took several hours
 to write it, but now I can solve any Sudoku puzzle instantly...
 
+![alt text](https://github.com/wizard97/LazySudoku/raw/master/united_sudoku.jpg "United Sudoku Puzzles")
+
+
 ## Usage
 Simply run the script as follows:
 ```bash
-python lazy_sudoku.py <board.txt>
+$ python lazy_sudoku.py <board.txt>
 ```
 Encode the board (`<board.txt>`) in the following format:
 ```
@@ -28,8 +31,11 @@ xx25x4x89
 ```
 
 ### Example
+There are three examples: `example_easy.txt`, `example_medium.txt`, and `example_hard.txt`.
+These examples were all stolen from the United magazine.
+
 ```bash
-python lazy_sudoku.py example_hard.txt
+$ python lazy_sudoku.py example_hard.txt
 INPUT BOARD:
  | | | |6| |4| |8
  |9|5|2| |4| | |
