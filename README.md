@@ -31,8 +31,10 @@ xx25x4x89
 ```
 
 ### Example
-There are three examples: `example_easy.txt`, `example_medium.txt`, and `example_hard.txt`.
-These examples were all stolen from the United magazine.
+There are three examples from the United magazine:
+`example_easy.txt`, `example_medium.txt`, and `example_hard.txt`.
+There is also `example_super.txt` which is supposedly
+[the world's hardest sudoku](https://www.telegraph.co.uk/news/science/science-news/9359579/Worlds-hardest-sudoku-can-you-crack-it.html).
 
 ```bash
 $ python lazy_sudoku.py example_hard.txt
